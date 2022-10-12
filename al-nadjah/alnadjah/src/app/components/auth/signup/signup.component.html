@@ -1,0 +1,58 @@
+<div class="signup">
+  <div class="form-container">
+    <form action="">
+      <h2>Sign Up</h2>
+      <p class="tc">
+        Already have an account ? if yes then click here to
+        <a routerLink="/signin">login</a>
+      </p>
+      <div class="form-line flex gap-10 wrap">
+        <input
+          class="flex-1"
+          type="text"
+          name="firstName"
+          placeholder="Your firstName ..."
+          [(ngModel)]="user.firstName"
+        />
+        <input
+          class="flex-1"
+          type="text"
+          name="lastName"
+          placeholder="Your lastName ..."
+          [(ngModel)]="user.lastName"
+        />
+      </div>
+      <div class="form-line flex">
+        <input
+          class="flex-1"
+          type="email"
+          name="email"
+          placeholder="Your email please ..."
+          [(ngModel)]="user.email"
+        />
+      </div>
+      <div class="form-line flex">
+        <input
+          class="flex-1"
+          type="password"
+          name="password"
+          placeholder="Your password please ..."
+          [(ngModel)]="user.password"
+        />
+      </div>
+      <div class="form-line flex">
+        <input
+          class="flex-1"
+          type="password"
+          name="passwordConfirm"
+          placeholder="Confirm your password please ..."
+          [(ngModel)]="user.passwordConfirm"
+        />
+      </div>
+
+      <div class="button flex">
+        <button class="btn flex-1" (click)="handleSubmit()">Register</button>
+      </div>
+    </form>
+  </div>
+</div>

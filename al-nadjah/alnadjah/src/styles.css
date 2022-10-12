@@ -1,0 +1,257 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-style: normal;
+  font-weight: 400;
+}
+h2 {
+  font-size: 1.5rem;
+}
+del {
+  color: navy;
+  /* color: #3f51b5; */
+}
+.none {
+  display: none;
+}
+.b {
+  border: 0.1px solid black;
+}
+.flex,
+.row {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+.flex-2 {
+  flex: 2;
+}
+.flex-3 {
+  flex: 3;
+}
+.flex-4 {
+  flex: 4;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+
+.aic {
+  align-items: center;
+}
+.jcc {
+  justify-content: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.btn {
+  height: 40px;
+  min-width: 150px;
+  padding: 10px;
+  margin: 10px 0;
+  outline: none;
+  color: navy;
+  /* color: #3f51b5; */
+  cursor: pointer;
+  box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+}
+
+.gap-5 {
+  gap: 5px;
+}
+.gap-10 {
+  gap: 10px;
+}
+
+.content {
+  width: 70%;
+  margin: 0 auto;
+  min-height: 70vh;
+}
+.unlisted {
+  list-style: none;
+  padding: 0;
+}
+.unlisted a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+.tc {
+  text-align: center;
+}
+.error {
+  color: red;
+}
+form p {
+  margin: 0;
+}
+
+/*********   ADDITIONAL INFO *****************/
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+table th,
+table td {
+  border: 1px solid #ccc;
+}
+table td {
+  padding: 0 10px;
+}
+.vendor-name h6 {
+  font-size: 1.5rem;
+}
+.vendor-name h6 a {
+  text-decoration: none;
+  color: #3f51b5;
+}
+.thumb img {
+  width: 80px;
+  border-radius: 200px;
+}
+/*********   COMMENTS *****************/
+.single-comment {
+  border: 0.1px solid #ccc;
+  margin: 20px 0;
+  border-radius: 20px;
+}
+.single-comment a {
+  text-decoration: none;
+  color: #3f51b5;
+  font-weight: bold;
+  text-align: center;
+}
+.single-comment .thumb a {
+  display: block;
+}
+.single-comment .user {
+  gap: 10px;
+  padding: 10px;
+}
+.single-comment .user .desc {
+  max-width: 600px;
+}
+.comments-area > .row {
+  gap: 20px;
+}
+.comments-area > .row > div:nth-child(2) {
+  flex: 1;
+}
+.comments-area > .row > div:nth-child(2) .progress {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.comments-area > .row > div:nth-child(2) .progress .progress-bar {
+  color: white;
+  font-weight: bold;
+  flex: 1;
+}
+.progress-bar {
+  background-color: #3f51b5;
+}
+@media screen and (max-width: 1200px) {
+  .content {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .content {
+    width: 95%;
+  }
+}
+
+/************************ SIGNIN SIGNUP *********************/
+.signup {
+  height: 70vh;
+}
+/* .btn {
+  font-size: 1.2rem;
+  height: 30px;
+  background-color: #3f51b5;
+  border: none;
+  min-width: 100px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 3px 5px -7px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+} */
+
+.btn {
+  min-width: 100px;
+  /* height: 45px; */
+  height: 30px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+  /* background-color: #3f51b5; */
+  background-color: #3a2ee5;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 1px 8px 55px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: #3f51b5;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.btn-main {
+  background-color: #3f51b5;
+}
+
+.form-container {
+  width: 500px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  border: 0.1px solid #ccc;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+}
+form {
+  padding: 5px;
+  background-color: white;
+}
+form h2 {
+  text-align: center;
+}
+form .form-line {
+  min-height: 40px;
+  padding: 10px 0;
+}
+form .form-line input {
+  font-size: 1.1rem;
+  height: 40px;
+}
+form .btn {
+  height: 45px;
+}
+@media screen and (max-width: 550px) {
+  .form-container {
+    width: 90%;
+  }
+}
+
+/*************** SINGLE PRODUCT*************/
