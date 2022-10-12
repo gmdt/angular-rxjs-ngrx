@@ -24,17 +24,31 @@
 </div>
 
 <ng-container *ngIf="todoList$ | async as todos">
-  <div *ngFor="let todo of todos" class="mt-3">
-    {{ todo.name }}
-    <div class="btn-group btn-group-sm float-right">
-      <button class="btn btn-info" (click)="updateTodo(todo)">
-        <span class="fa fa-edit"></span>
-      </button>
-      <button class="btn btn-danger" (click)="deleteTodo(todo)">
-        <span class="fa fa-trash"></span>
-      </button>
-    </div>
-  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">ACTIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos">
+        <th>{{ todo.id ? todo.id : "-" }}</th>
+        <td>{{ todo.name }}</td>
+        <td>
+          <div class="btn-group btn-group-sm float-right">
+            <button class="btn btn-info" (click)="updateTodo(todo)">
+              <span class="fa fa-edit"></span>
+            </button>
+            <button class="btn btn-danger" (click)="deleteTodo(todo)">
+              <span class="fa fa-trash"></span>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
   <ng-container *ngIf="loading$ | async as loading">
     <i class="fa fa-spin fa-spinner fa-3x" *ngIf="loading"></i>
@@ -44,6 +58,16 @@
   </ng-container>
 </ng-container>
 
-<div class="mt-3">
-  <a routerLink="/info" class="btn btn-info">Go to info</a>
+<div class="btn-group btn-group-sm float-right">
+  <button class="btn btn-danger" (click)="deleteAllTodo()">
+    Delete All
+    <span class="fa fa-trash"></span>
+  </button>
+  <button class="btn btn-info" (click)="gotoInfo()">
+    Goto List
+    <span class="fa fa-trash"></span>
+  </button>
+  <!-- <div class="mt-3">
+    <a routerLink="/info" class="btn btn-info">Go to info</a>
+  </div> -->
 </div>

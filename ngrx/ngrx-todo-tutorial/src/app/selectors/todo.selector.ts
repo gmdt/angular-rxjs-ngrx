@@ -1,9 +1,6 @@
 import { EntitySelectors, EntityState } from '@ngrx/entity/src/models';
-import {
-  createFeature,
-  createFeatureSelector,
-  createSelector,
-} from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+
 import { Todo } from '../models/todo.model';
 import { State, todoAdapter } from '../reducers/todo.reducer';
 

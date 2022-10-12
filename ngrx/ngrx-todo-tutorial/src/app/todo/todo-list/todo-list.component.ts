@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
@@ -7,6 +7,7 @@ import { TodoService } from 'src/app/services/todo.service';
 import * as fromTodoReducer from '../../reducers/todo.reducer';
 import * as fromTodoAction from '../../actions/todo.action';
 import * as fromTodoSelector from '../../selectors/todo.selector';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-list',
@@ -21,7 +22,8 @@ export class TodoListComponent {
 
   constructor(
     private todoService: TodoService,
-    private store: Store<fromTodoReducer.State>
+    private store: Store<fromTodoReducer.State>,
+    private router: Router
   ) {
     this.todoList$ = store.pipe(select(fromTodoSelector.selectAll));
     this.loading$ = store.pipe(select(fromTodoSelector.selectLoading));
@@ -55,8 +57,19 @@ export class TodoListComponent {
 
   deleteTodo(todo: Todo): void {
     const id = todo.id;
-    if (id) {
-      this.store.dispatch(fromTodoAction.deleteTodo({ id }));
-    } else throw new Error('Oops, some error occurred...');
+    if (confirm(`Want to delete ${todo.name} ?`)) {
+      if (id) {
+        this.store.dispatch(fromTodoAction.deleteTodo({ id }));
+      } else throw new Error('Oops, some error occurred...');
+    }
+  }
+
+  deleteAllTodo(): void {
+    if (confirm('Want to delete all items ?'))
+      this.store.dispatch(fromTodoAction.deleteAllTodo());
+  }
+
+  gotoInfo() {
+    this.router.navigate(['/info']);
   }
 }

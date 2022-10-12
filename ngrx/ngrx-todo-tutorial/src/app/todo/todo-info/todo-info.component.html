@@ -3,11 +3,6 @@
 <h5>Total of todos: {{ count$ | async }}</h5>
 <h5>Last updated: {{ lastUpdate$ | async | date: "mediumTime" }}</h5>
 
-<button class="btn btn-danger btn-sm" (click)="deleteAllTodos()">
-  Delete All
-  <span class="fa fa-trash"></span>
-</button>
-
 <div class="mt-3">
   <a routerLink="/list" class="btn btn-info">Go to list</a>
 </div>
