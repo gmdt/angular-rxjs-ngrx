@@ -6,11 +6,7 @@ import { Category } from 'src/app/models/category';
   templateUrl: './page-title.component.html',
   styleUrls: ['./page-title.component.css'],
 })
-export class PageTitleComponent implements OnInit {
+export class PageTitleComponent {
   @Input() title: string | undefined;
   @Input() category: Category | undefined;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

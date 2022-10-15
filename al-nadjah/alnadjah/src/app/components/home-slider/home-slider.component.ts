@@ -10,15 +10,10 @@ import { Slide } from 'src/app/models/slide';
 })
 export class HomeSliderComponent implements OnInit, OnDestroy {
   slider: Slide[] = sliderData;
-
   currentSlide: Slide = this.slider[0];
-
   currentIndex: number = 0;
-
   indexObs: Observable<number> = interval(5000);
   indexObsSub: Subscription | undefined;
-
-  constructor() {}
 
   ngOnInit(): void {
     this.indexObsSub = this.indexObs.subscribe({
@@ -31,6 +26,7 @@ export class HomeSliderComponent implements OnInit, OnDestroy {
     this.indexObsSub?.unsubscribe();
   }
 
+  //todo: must simplify
   handleChangeImage(index: number) {
     let newIndex;
     if (index === -1) {

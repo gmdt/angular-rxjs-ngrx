@@ -4,9 +4,8 @@ import { User } from 'src/app/models/user';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
   user: User = {
     firstName: '',
     lastName: '',
@@ -14,8 +13,6 @@ export class SignupComponent implements OnInit {
     password: '',
     passwordConfirm: '',
   };
-
-  constructor() {}
 
   ngOnInit(): void {}
 

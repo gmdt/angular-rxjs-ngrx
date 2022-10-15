@@ -7,48 +7,31 @@ import { ProductService } from 'src/app/services/product.service';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
+export class ProductListComponent {
+  resultData: ResultRequest<Product> | undefined;
+  @Input() products: Product[] = [];
 
-export class ProductListComponent implements OnInit, OnDestroy {
+  isDisplayModal: boolean = false;
+  @Input() isLoading: boolean = true;
+  modalProduct: Product | undefined;
 
-  resultData: ResultRequest<Product> | undefined
-  @Input() products: Product[] = []
-
-  isDisplayModal: boolean = false
-  @Input() isLoading: boolean = true
-  modalProduct: Product | undefined
-
-
-  constructor(private productService: ProductService) {
+  getNumber(): number {
+    return 3;
   }
-
-  ngOnInit(): void {
-
-
+  handleDeleteProduct(product: Product) {
+    this.products = this.products.filter((p) => p._id !== product._id);
   }
-  ngOnDestroy(){
-
-  }
-
-  getNumber(): number{
-    return 3
-  }
-  handleDeleteProduct(product: Product){
-    this.products = this.products.filter(p => p._id !== product._id)
-  }
-  handleDisplayProductViewModal(product: Product){
-    console.log("---------- handleDisplayProductViewModal ---------------------");
-    if(product){
-      this.isDisplayModal = true
-      this.modalProduct = product
+  handleDisplayProductViewModal(product: Product) {
+    if (product) {
+      this.isDisplayModal = true;
+      this.modalProduct = product;
     }
-
   }
 
-  handleCloseModal(){
-    this.isDisplayModal = false
-    this.modalProduct = undefined
+  handleCloseModal() {
+    this.isDisplayModal = false;
+    this.modalProduct = undefined;
   }
-
 }

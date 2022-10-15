@@ -4,32 +4,18 @@ import { Product } from 'src/app/models/product';
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.css']
+  styleUrls: ['./product-item.component.css'],
 })
-export class ProductItemComponent implements OnInit {
+export class ProductItemComponent {
+  @Input() product: Product | undefined;
+  @Output() deleteProductItem: EventEmitter<Product> =
+    new EventEmitter<Product>();
+  @Output() displayProductViewModal: EventEmitter<Product> =
+    new EventEmitter<Product>();
 
-  @Input() product: Product | undefined
-
-  @Output() deleteProductItem: EventEmitter<Product> = new EventEmitter<Product>()
-
-  @Output() displayProductViewModal: EventEmitter<Product> = new EventEmitter<Product>()
-
-  constructor() { }
-
-  ngOnInit(): void {
-    //console.log("-----------PRODUCT ITEM --------------------");
-    //console.log(this.product);
-
+  handleClickProduct(product: Product | undefined) {
+    this.displayProductViewModal.emit(product);
   }
 
-  handleClickProduct(product: Product | undefined){
-    //console.log(product);
-    this.displayProductViewModal.emit(product)
-  }
-
-  deleteProduct(product: Product | undefined){
-    //console.log(product);
-    //this.deleteProductItem.emit(product)
-  }
-
+  deleteProduct(product: Product | undefined) {}
 }

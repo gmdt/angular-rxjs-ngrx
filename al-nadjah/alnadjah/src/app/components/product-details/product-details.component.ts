@@ -4,19 +4,12 @@ import { Product } from 'src/app/models/product';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css']
+  styleUrls: ['./product-details.component.css'],
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent {
+  @Input() product: Product | undefined;
 
-  @Input() product: Product | undefined
-
-  constructor() { }
-
-  ngOnInit(): void {
+  handleChangeDetails(component: any) {
+    component.product = this.product;
   }
-
-  handleChangeDetails(component : any){
-    component.product = this.product
-  }
-
 }
