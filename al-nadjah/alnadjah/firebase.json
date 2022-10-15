@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/ng-pokemon-app",
+    "public": "dist/shop-app",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
