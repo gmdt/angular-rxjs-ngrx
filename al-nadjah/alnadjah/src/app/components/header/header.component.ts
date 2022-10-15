@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { auth_items, nav_items } from 'src/app/api/nav';
-import { Item } from 'src/app/models/item';
-import { ProductService } from 'src/app/services/product.service';
-import { environment } from 'src/environments/environment';
+import { auth_items, nav_items } from '../../../app/api/nav';
+import { Item } from '../../../app/models/item';
+import { ProductService } from '../../../app/services/product.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-header',

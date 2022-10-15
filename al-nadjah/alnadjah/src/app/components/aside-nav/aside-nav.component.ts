@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { auth_items, nav_items } from 'src/app/api/nav';
-import { Item } from 'src/app/models/item';
+import { auth_items, nav_items } from '../../../app/api/nav';
+import { Item } from '../../../app/models/item';
 
 @Component({
   selector: 'app-aside-nav',

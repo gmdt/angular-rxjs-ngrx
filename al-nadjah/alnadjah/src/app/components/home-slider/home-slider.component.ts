@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Observable, Subscription } from 'rxjs';
-import { sliderData } from 'src/app/api/api-slider';
-import { Slide } from 'src/app/models/slide';
+import { sliderData } from '../../../app/api/api-slider';
+import { Slide } from '../../../app/models/slide';
 
 @Component({
   selector: 'app-home-slider',

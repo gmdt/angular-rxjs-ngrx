@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Category } from 'src/app/models/category';
-import { Product } from 'src/app/models/product';
-import { ResultRequest } from 'src/app/models/result-request';
-import { CategoriesService } from 'src/app/services/categories.service';
-import { ProductService } from 'src/app/services/product.service';
+import { Category } from '../../../app/models/category';
+import { Product } from '../../../app/models/product';
+import { ResultRequest } from '../../../app/models/result-request';
+import { CategoriesService } from '../../../app/services/categories.service';
+import { ProductService } from '../../../app/services/product.service';
 
 @Component({
   selector: 'app-products-container',

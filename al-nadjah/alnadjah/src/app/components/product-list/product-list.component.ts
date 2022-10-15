@@ -1,8 +1,6 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Product } from 'src/app/models/product';
-import { ResultRequest } from 'src/app/models/result-request';
-import { ProductService } from 'src/app/services/product.service';
+import { Component, Input } from '@angular/core';
+import { Product } from '../../../app/models/product';
+import * as resultRequest from '../../../app/models/result-request';
 
 @Component({
   selector: 'app-product-list',
@@ -10,7 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
-  resultData: ResultRequest<Product> | undefined;
+  resultData: resultRequest.ResultRequest<Product> | undefined;
   @Input() products: Product[] = [];
 
   isDisplayModal: boolean = false;

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Category } from 'src/app/models/category';
+import { Component, Input } from '@angular/core';
+import { Category } from '../../../app/models/category';
 
 @Component({
   selector: 'app-page-title',

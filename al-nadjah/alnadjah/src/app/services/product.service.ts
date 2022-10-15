@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { interval, Observable, of } from 'rxjs';
 import { Product } from '../models/product';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { ResultRequest } from '../models/result-request';
 
 @Injectable({
@@ -10,7 +10,6 @@ import { ResultRequest } from '../models/result-request';
 })
 export class ProductService {
   private products: Product[] = [];
-
   private urlApi: string = environment.serverUrl.products;
 
   constructor(private http: HttpClient) {}
